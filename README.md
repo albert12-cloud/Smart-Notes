@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Notes — School Website</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Simple, fast single‑file website for school notes and study tips." />
+  <style>
+    /* Smooth scroll for in‑page links */
+    html { scroll-behavior: smooth; }
+    /* Hide scrollbar for a cleaner look on WebKit */
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+  </style>
+</head>
+<body class="bg-white text-slate-800">
+  <!-- Top Bar -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Brand -->
+        <a href="#home" class="flex items-center gap-3">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-slate-900 text-white font-bold">SN</span>
+          <span class="font-semibold text-lg">Smart Notes</span>
+        </a>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-6 font-medium">
+          <a href="#notes" class="hover:text-slate-900">Science Notes</a>
+          <a href="#tips" class="hover:text-slate-900">Study Tips</a>
+          <a href="#periodic" class="hover:text-slate-900">Periodic Table</a>
+          <a href="#about" class="hover:text-slate-900">About</a>
+          <a href="#contact" class="hover:text-white bg-slate-900 text-white px-4 py-2 rounded-2xl">Contact</a>
+        </nav>
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-xl border border-slate-300" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <nav id="mobileNav" class="md:hidden hidden border-t border-slate-200">
+      <div class="px-4 py-3 grid gap-2">
+        <a href="#notes" class="py-2">Science Notes</a>
+        <a href="#tips" class="py-2">Study Tips</a>
+        <a href="#periodic" class="py-2">Periodic Table</a>
+        <a href="#about" class="py-2">About</a>
+        <a href="#contact" class="py-2 font-medium text-white bg-slate-900 rounded-xl text-center">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">Notes that make study <span class="text-slate-500">simple.</span></h1>
+          <p class="mt-4 text-lg text-slate-600">All your Class 7–10 science notes, study tips, and tools—neatly organized in one place. Fast, clean, mobile‑friendly.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#notes" class="px-5 py-3 rounded-2xl bg-slate-900 text-white font-medium">Browse Notes</a>
+            <a href="#periodic" class="px-5 py-3 rounded-2xl border border-slate-300 font-medium">Open Periodic Table</a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-video rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 shadow-inner"></div>
+          <p class="mt-3 text-sm text-slate-500">Tip: Replace the grey box with a screenshot or an image of your notes page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Science Notes -->
+  <section id="notes" class="bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-3xl font-bold">Science Notes</h2>
+          <p class="text-slate-600 mt-2">Quick, exam‑focused notes by class and chapter. Edit the cards below as you add content.</p>
+        </div>
+        <a href="#" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-2xl border border-slate-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a1 1 0 011-1h4a1 1 0 110 2H6.414l3.293 3.293a1 1 0 01-1.414 1.414L5 6.414V9a1 1 0 11-2 0V5a1 1 0 011-1z"/><path d="M17 16a1 1 0 01-1 1H8a1 1 0 110-2h3.586l-3.293-3.293a1 1 0 011.414-1.414L13 13.586V10a1 1 0 112 0v4a1 1 0 01-1 1z"/></svg>
+          Download PDF
+        </a>
+      </div>
+
+      <!-- Notes Grid -->
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card -->
+        <article class="group rounded-2xl border border-slate-200 p-5 bg-white shadow-sm hover:shadow transition">
+          <h3 class="font-semibold text-lg">Class 10 — Physics: Electricity</h3>
+          <p class="mt-2 text-slate-600 text-sm">Ohm’s law, series vs parallel, power & energy, numericals.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-slate-900">Open notes
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+        <article class="group rounded-2xl border border-slate-200 p-5 bg-white shadow-sm hover:shadow transition">
+          <h3 class="font-semibold text-lg">Class 9 — Chemistry: Acids, Bases & Salts</h3>
+          <p class="mt-2 text-slate-600 text-sm">Indicators, pH scale, neutralization, common salts and uses.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-slate-900">Open notes
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+        <article class="group rounded-2xl border border-slate-200 p-5 bg-white shadow-sm hover:shadow transition">
+          <h3 class="font-semibold text-lg">Class 8 — Biology: Cell Structure</h3>
+          <p class="mt-2 text-slate-600 text-sm">Plant vs animal cells, organelles, functions, diagrams.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-slate-900">Open notes
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+        <!-- Duplicate or modify cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Study Tips -->
+  <section id="tips" class="">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl font-bold">Study Tips</h2>
+      <p class="text-slate-600 mt-2">Short, practical advice you can apply today.</p>
+
+      <div class="mt-8 grid lg:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-slate-200 p-5">
+          <h3 class="font-semibold">Pomodoro with Recall</h3>
+          <p class="mt-2 text-slate-600 text-sm">25 min focused study + 5 min break. In the break, verbally recall what you just studied.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-5">
+          <h3 class="font-semibold">Active Practice</h3>
+          <p class="mt-2 text-slate-600 text-sm">Solve at least 3 problems per concept. Check mistakes and re‑attempt.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-5">
+          <h3 class="font-semibold">Daily Mini‑Reviews</h3>
+          <p class="mt-2 text-slate-600 text-sm">5–10 minutes to re‑read key formulas/diagrams before sleeping.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Periodic Table (Lightweight, simple) -->
+  <section id="periodic" class="bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-3xl font-bold">Periodic Table</h2>
+          <p class="text-slate-300 mt-2">Tap an element to view basic properties.</p>
+        </div>
+        <button id="downloadCSV" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white text-slate-900 font-medium">Download CSV</button>
+      </div>
+
+      <!-- Simple, responsive grid (subset) -->
+      <div id="ptable" class="mt-8 grid grid-cols-8 sm:grid-cols-12 gap-2"></div>
+      <p class="mt-4 text-slate-400 text-sm">Note: This is a compact, educational view (H, He, Li…Ar shown by default). You can expand with full data easily.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl font-bold">About</h2>
+      <p class="mt-2 text-slate-600 max-w-3xl">I teach Science (Class 7–10) and share concise notes and helpful tips. This site is kept lightweight so it works great on slow internet and mobile devices. You can copy this page, edit the text, and publish it on GitHub Pages or any free host.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl font-bold">Contact</h2>
+      <form class="mt-6 grid gap-4 max-w-xl">
+        <div>
+          <label class="block text-sm text-slate-600">Name</label>
+          <input type="text" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2" placeholder="Your name" />
+        </div>
+        <div>
+          <label class="block text-sm text-slate-600">Email</label>
+          <input type="email" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2" placeholder="you@example.com" />
+        </div>
+        <div>
+          <label class="block text-sm text-slate-600">Message</label>
+          <textarea class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2" rows="4" placeholder="How can I help?"></textarea>
+        </div>
+        <button type="button" id="sendBtn" class="rounded-2xl bg-slate-900 text-white px-5 py-3 font-medium">Send (demo)</button>
+        <p id="sentMsg" class="hidden text-green-600">Thanks! This is a demo form. Connect it to Google Forms or Formspree to receive responses.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-500">© <span id="year"></span> Smart Notes. All rights reserved.</p>
+      <div class="text-sm text-slate-500">Built with ♥ using Tailwind CSS.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+
+    // Demo send
+    const sendBtn = document.getElementById('sendBtn');
+    const sentMsg = document.getElementById('sentMsg');
+    if (sendBtn) sendBtn.addEventListener('click', () => {
+      sentMsg.classList.remove('hidden');
+      setTimeout(() => sentMsg.classList.add('hidden'), 3000);
+    });
+
+    // Simple Periodic Table (first 18 elements demo) — extend easily
+    const elements = [
+      {Z:1, sym:'H', name:'Hydrogen'}, {Z:2, sym:'He', name:'Helium'},
+      {Z:3, sym:'Li', name:'Lithium'}, {Z:4, sym:'Be', name:'Beryllium'},
+      {Z:5, sym:'B', name:'Boron'}, {Z:6, sym:'C', name:'Carbon'},
+      {Z:7, sym:'N', name:'Nitrogen'}, {Z:8, sym:'O', name:'Oxygen'},
+      {Z:9, sym:'F', name:'Fluorine'}, {Z:10, sym:'Ne', name:'Neon'},
+      {Z:11, sym:'Na', name:'Sodium'}, {Z:12, sym:'Mg', name:'Magnesium'},
+      {Z:13, sym:'Al', name:'Aluminium'}, {Z:14, sym:'Si', name:'Silicon'},
+      {Z:15, sym:'P', name:'Phosphorus'}, {Z:16, sym:'S', name:'Sulfur'},
+      {Z:17, sym:'Cl', name:'Chlorine'}, {Z:18, sym:'Ar', name:'Argon'}
+    ];
+
+    const grid = document.getElementById('ptable');
+    elements.forEach(el => {
+      const card = document.createElement('button');
+      card.className = 'group rounded-xl p-3 border border-white/20 bg-white/5 hover:bg-white/10 text-left';
+      card.innerHTML = `
+        <div class="flex items-start justify-between text-xs text-slate-300">
+          <span>${el.Z}</span>
+        </div>
+        <div class="mt-1 text-2xl font-bold">${el.sym}</div>
+        <div class="text-xs text-slate-300">${el.name}</div>
+      `;
+      card.addEventListener('click', () => {
+        alert(`${el.name} (Z=${el.Z})`);
+      });
+      grid.appendChild(card);
+    });
+
+    // CSV download (demo for shown elements)
+    const dl = document.getElementById('downloadCSV');
+    if (dl) dl.addEventListener('click', () => {
+      const header = 'Z,Symbol,Name\n';
+      const rows = elements.map(e => `${e.Z},${e.sym},${e.name}`).join('\n');
+      const blob = new Blob([header + rows], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'elements_demo.csv'; a.click();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+
+  <!-- HOW TO EDIT
+    1) Change the brand name "Smart Notes" above.
+    2) Replace card titles & text in Science Notes.
+    3) Add more elements to the Periodic Table array or swap with a full table later.
+    4) Connect the Contact form via Google Forms / Formspree to collect messages.
+    5) Publish free on GitHub Pages: create repo -> add index.html -> Settings -> Pages.
+  -->
+</body>
+</html>
